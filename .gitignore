@@ -9,3 +9,6 @@
 
 # optional eslint cache
 .eslintcache
+
+*storybook.log
+storybook-static

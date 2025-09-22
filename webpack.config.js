@@ -1,5 +1,4 @@
 const path = require('path');
-const { use } = require('react');
 
 module.exports = {
   mode: 'production',
