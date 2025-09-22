@@ -1,34 +1,39 @@
 .defButton {
   width: 90px;
   height: 30px;
-  color: rgb(208, 208, 211);
+  color: rgb(255, 255, 255);
   background: rgb(62, 145, 205);
   border: none;
   border-radius: 5px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .small {
   width: 90px;
   height: 30px;
+  font-size: small;
 }
 .large {
   width: 150px;
   height: 70px;
+  font-size: large;
 }
 .medium {
   width: 120px;
   height: 50px;
+  font-size: medium;
 }
 .text {
   background: none;
   border: none;
   color: rgb(9, 135, 225);
 }
-.contained {
+.outlined {
   background: none;
   border: 2px solid;
   color: rgb(9, 135, 225);
 }
-.outlined {
+.contained {
   background: rgb(9, 135, 225);
   border: 1px solid rgb(9, 135, 225);
 }

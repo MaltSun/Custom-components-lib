@@ -5,8 +5,9 @@ export interface ButtonProps {
   size?: 'small' | 'medium' | 'large';
   variant?: 'text' | 'contained' | 'outlined';
   color?: string;
+  background?: string;
   children?: React.ReactNode;
-  background?: string
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const Button: FC<ButtonProps> = ({
   size,
   variant,
   background,
+  onClick,
   ...props
 }) => {
   const classList = ['defButton'];
@@ -27,9 +29,13 @@ const Button: FC<ButtonProps> = ({
     classList.push(variant);
   }
 
-
   return (
-    <button {...props} className={classList.join(' ')}  style={{ color, background }}>
+    <button
+      {...props}
+      className={classList.join(' ')}
+      style={{ color, background }}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

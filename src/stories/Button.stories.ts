@@ -32,24 +32,32 @@ export const Default: Story = {
 // Разные размеры
 export const Small: Story = {
   args: {
-    children: 'Small Button',
-    size: 'small',
+    children: 'Small',
     variant: 'contained',
   },
 };
 
 export const Large: Story = {
   args: {
-    children: 'Large Button',
+    children: 'Large ',
     size: 'large',
     variant: 'contained',
   },
 };
 
+export const Medium: Story = {
+  args: {
+    children: 'Medium',
+    size: 'medium',
+    variant: 'outlined',
+  },
+};
+
+
 // Разные варианты
 export const Text: Story = {
   args: {
-    children: 'Text Button',
+    children: 'Text ',
     variant: 'text',
     color: 'red',
   },
@@ -57,15 +65,23 @@ export const Text: Story = {
 
 export const Outlined: Story = {
   args: {
-    children: 'Outlined Button',
-    variant: 'outlined',
-    color: 'green',
+    children: 'Outlined ',
+    variant: 'outlined'
   },
 };
 
 export const Contained: Story = {
   args: {
     children: 'Contained',
-    variant: 'contained'
+    variant: 'contained',
   },
 };
+
+export const Cliked: Story = {
+  args: {
+    children: 'Contained',
+    variant: 'contained',
+    onClick: () => alert('Кнопка нажата!'),
+  },
+};
+
