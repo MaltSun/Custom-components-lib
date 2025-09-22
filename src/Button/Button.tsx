@@ -22,7 +22,7 @@ const Button: FC<ButtonProps> = ({
   const classList = ['defButton'];
 
   if (size) {
-    classList.push(size);
+    classList.push(`${size}-btn`);
   }
 
   if (variant) {

@@ -8,32 +8,32 @@
   font-weight: 700;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.small {
+.small-btn {
   width: 90px;
   height: 30px;
   font-size: small;
 }
-.large {
+.large-btn {
   width: 150px;
   height: 70px;
   font-size: large;
 }
-.medium {
+.medium-btn {
   width: 120px;
   height: 50px;
   font-size: medium;
 }
-.text {
+.text-btn {
   background: none;
   border: none;
   color: rgb(9, 135, 225);
 }
-.outlined {
+.outlined-btn{
   background: none;
   border: 2px solid;
   color: rgb(9, 135, 225);
 }
-.contained {
+.contained-btn {
   background: rgb(9, 135, 225);
   border: 1px solid rgb(9, 135, 225);
 }
