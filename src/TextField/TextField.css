@@ -1,0 +1,124 @@
+.textfield {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.textfield-label {
+  font-weight: 300;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  left: 25px;
+  background-color: white;
+  padding: 5px;
+  transition: transform 4s ease-in-out 1s;
+}
+
+.textfield-label.standart.active {
+  top: -6px;
+  left: 8px;
+  font-size: 12px;
+  
+}
+
+.textfield-label.filled.active {
+  top: 2px;
+  left: 12px;
+  font-size: 12px;
+}
+
+.textfield-label.outlined.active {
+  color: #1976d2;
+}
+
+.textfield-label.standart {
+  position: absolute;
+  left: 11px;
+  background: transparent;
+}
+
+.textfield-label.filled {
+  position: absolute;
+  top: 12px;
+  background: transparent;
+}
+
+.textfield:focus {
+  color: #1976d2;
+}
+
+.textfield-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  outline: none;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.textfield-helper {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6e6e6e;
+}
+.textfield-helper.outlined,
+.textfield-helper.filled {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6e6e6e;
+  margin-left: 12px;
+}
+
+.textfield-input.standart {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid black;
+}
+
+.textfield-input.filled {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid black;
+  background: rgba(176, 176, 176, 0.146);
+  border-radius: 3px;
+  padding: 18px 12px 3px;
+}
+
+.textfield-input.standart:focus,
+.textfield-input.filled:focus {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 2px solid #1976d2;
+}
+
+.textfield-input.outlined {
+  border-radius: 3px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.textfield-input.outlined:focus {
+  border: 2px solid #1976d2;
+  transition: ease 0.2s;
+}
+
+.textfield:focus {
+  color: #1976d2;
+  /* надо, чтобы лейбл тожже был голубым */
+}
+.textfield.error,
+.textfield-input.outlined.error,
+.textfield-input.filled.error {
+  color: red;
+  border-color: red;
+}
+
+.textfield-input.standard.error {
+  border: none;
+  border-bottom: 1px solid red;
+  border-radius: 0px;
+}
+.textfield-error {
+  margin-top: 4px;
+  margin-left: 12px;
+  font-size: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
