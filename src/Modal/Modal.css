@@ -1,0 +1,52 @@
+:root {
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-weight: 700;
+  --base-font-size: 16px;
+  --button-color: rgb(9, 135, 225);
+}
+.modal {
+  position: absolute;
+  z-index: 1000;
+  width: 300px;
+  height: 400px;
+  border-radius: 15px;
+  top: calc(50% - 250px);
+  border: 2px solid var(--button-color);
+  left: calc(50% - 150px);
+  padding: 15px;
+  box-shadow: 15px 20px rgba(128, 128, 128, 0.158) ;
+}
+.modal.open {
+  display: content;
+}
+.modal.close {
+  display: none;
+}
+
+.openButton {
+  position: static;
+  width: 90px;
+  height: 30px;
+  color: rgb(255, 255, 255);
+  background: var(--button-color);
+  border: none;
+  border-radius: 5px;
+  font-size: var(--base-font-size);
+  font-weight: var(--font-weight);
+  font-family: var(--font-family);
+}
+.closeButton {
+  background: var(--button-color);
+  color: white;
+  position: relative;
+  left: 91%;
+  border-radius: 7px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  font-size: var(--base-font-size);
+}
+.closeButton:hover {
+  background: rgb(160, 160, 160);
+  transition: 0.3s;
+}
