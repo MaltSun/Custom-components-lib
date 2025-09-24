@@ -56,6 +56,11 @@
   height: 30px;
 }
 
+.textfield-input:hover{
+  cursor: pointer;
+  
+}
+
 .textfield-helper {
   margin-top: 4px;
   font-size: var(--small-font-size);

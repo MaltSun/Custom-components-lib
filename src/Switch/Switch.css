@@ -8,7 +8,8 @@
 }
 .switch-container {
   font-family: var(--font-family);
-  font-weight: var(--font-weight);}
+  font-weight: var(--font-weight);
+}
 
 .switch {
   position: relative;
@@ -99,3 +100,4 @@ input:checked + .slider-large:before {
   display: flex;
   flex-direction: row;
 }
+

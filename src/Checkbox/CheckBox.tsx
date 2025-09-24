@@ -66,12 +66,16 @@ const CheckBox: FC<CheckBoxProps> = ({
         type="checkbox"
         checked={checked ?? internalChecked}
         disabled={disabled}
-        required={required}
         onChange={handleChange}
         style={{ accentColor: color }}
         {...props}
       />
-      {label && <label>{label}</label>}
+      {label && (
+        <label>
+          {label}
+          {required ? ' *' : ''}
+        </label>
+      )}
     </div>
   );
 };

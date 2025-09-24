@@ -14,7 +14,7 @@
   border: 2px solid var(--button-color);
   left: calc(50% - 150px);
   padding: 15px;
-  box-shadow: 15px 20px rgba(128, 128, 128, 0.158) ;
+  box-shadow: 15px 20px rgba(128, 128, 128, 0.158);
 }
 .modal.open {
   display: content;
@@ -34,6 +34,17 @@
   font-size: var(--base-font-size);
   font-weight: var(--font-weight);
   font-family: var(--font-family);
+  box-shadow: 3px 3px rgba(125, 122, 122, 0.372);
+  cursor: pointer
+  
+}
+.openButton:hover {
+  background: rgb(23, 151, 243);
+  transition: 0.2s ease;
+}
+.openButton:active {
+  background: rgb(10, 107, 177);
+  transition: 0.1s ease;
 }
 .closeButton {
   background: var(--button-color);
@@ -45,8 +56,9 @@
   height: 25px;
   border: none;
   font-size: var(--base-font-size);
+  cursor: pointer
 }
 .closeButton:hover {
-  background: rgb(160, 160, 160);
+  background:  rgb(10, 107, 177);
   transition: 0.3s;
 }
