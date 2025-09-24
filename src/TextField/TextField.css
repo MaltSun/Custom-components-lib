@@ -28,11 +28,6 @@
   
 }
 
-.textfield-label.filled.active {
-  top: 2px;
-  left: 12px;
-}
-
 .textfield-label.outlined.active {
   color: var(--button-color);
 }

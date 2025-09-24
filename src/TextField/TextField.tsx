@@ -62,7 +62,7 @@ const TextField: FC<TextFieldProps> = ({
     <div className={`textfield ${error ? 'error' : ''} ${variant}`}>
       {label && (
         <label
-          className={`textfield-label ${variant} ${isActive ? 'active' : ''}`}
+          className={`textfield-label ${variant} ${isActive ? 'active': ''}`}
         >
           {label} {required && '*'}
         </label>
