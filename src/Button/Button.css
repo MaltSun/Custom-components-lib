@@ -1,12 +1,20 @@
+:root {
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-weight: 700;
+  --base-font-size: 16px;
+  --button-color: rgb(9, 135, 225)
+}
+
 .defButton {
   width: 90px;
   height: 30px;
   color: rgb(255, 255, 255);
-  background: rgb(62, 145, 205);
+  background:  var(--button-color);
   border: none;
   border-radius: 5px;
-  font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:  var(--base-font-size);
+  font-weight: var(--font-weight);
+  font-family: var(--font-family);
 }
 .small-btn {
   width: 90px;
@@ -26,14 +34,14 @@
 .text-btn {
   background: none;
   border: none;
-  color: rgb(9, 135, 225);
+  color:  var(--button-color);
 }
-.outlined-btn{
+.outlined-btn {
   background: none;
   border: 2px solid;
-  color: rgb(9, 135, 225);
+  color: var(--button-color);
 }
 .contained-btn {
-  background: rgb(9, 135, 225);
-  border: 1px solid rgb(9, 135, 225);
+  background:  var(--button-color);
+  border: 1px solid  var(--button-color);
 }
