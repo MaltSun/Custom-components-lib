@@ -1,0 +1,96 @@
+:root {
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-weight: 700;
+  --base-font-size: 16px;
+  --button-color: rgb(9, 135, 225);
+  --small-font-size: 12px;
+  --error-color: red;
+}
+.select-container {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+}
+.select {
+  padding: 8px 12px;
+  font-size: var(--base-font-size);
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  height: 45px;
+  width: 200px;
+}
+.select.outlined.error{
+  border-color: var(--error-color) !important
+}
+.select-label.active{
+  color: var(--button-color)
+}
+
+.select:focus, .select.filled:focus{
+ border-bottom: 2px solid var(--button-color)
+}
+.select.outlined:focus{
+ border: 2px solid var(--button-color)
+}
+.select.filled {
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid black;
+  background: rgba(176, 176, 176, 0.146);
+  border-radius: 3px;
+
+  padding: 18px 12px 3px;
+  border-radius: 4px;
+}
+.select.outlined {
+  border-radius: 3px;
+  border: 1px solid black;
+  border-radius: 3px;
+  border-radius: 4px;
+}
+.select-label {
+  font-weight: 300;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  left: 11px;
+  /* background-color: white; */
+  padding: 5px;
+  transition: transform 4s ease-in-out 1s;
+}
+.select-label.filled {
+  top: 12px;
+  left: 17px;
+  background: transparent;
+}
+.select-label.outlined {
+  background: white;
+  top: 2px;
+  left: 22px;
+}
+
+.select-helper {
+  margin-top: 4px;
+  color: #6e6e6e;
+}
+
+.select-helper.filled,
+.select-error.filled,
+.select-helper.outlined {
+  margin-left: 5px;
+}
+
+.select-helper,
+.error {
+  font-size: 12px;
+
+}
+.error{
+  color: var(--error-color) !important
+}
+
+option{
+  font-size: var(--base-font-size);
+}
+
