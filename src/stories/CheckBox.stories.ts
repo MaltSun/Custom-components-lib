@@ -57,7 +57,6 @@ export const Large: Story = {
     },
 };
 
-//required/disable/cheked
 export const Required: Story = {
     args: {
         label: 'username',
@@ -80,12 +79,4 @@ export const Cheked: Story = {
         checked: true
     },
 };
-
-export const Indeterminate: Story = {
-    args: {
-        label: 'username',
-        indeterminate: true,
-    },
-};
-
 

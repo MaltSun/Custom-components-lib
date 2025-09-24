@@ -26,38 +26,5 @@ export const Default: Story = {
 
 
 
-export const Small: Story = {
-    args: {
-    },
-};
 
-export const Large: Story = {
-    args: {
-    },
-};
-
-export const Medium: Story = {
-    args: {
-    },
-};
-
-export const Text: Story = {
-    args: {
-    },
-};
-
-export const Outlined: Story = {
-    args: {
-    },
-};
-
-export const Contained: Story = {
-    args: {
-    },
-};
-
-export const Cliked: Story = {
-    args: {
-    },
-};
 
