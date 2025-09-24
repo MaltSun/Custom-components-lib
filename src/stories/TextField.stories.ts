@@ -31,9 +31,7 @@ type Story = StoryObj<TextFieldProps>;
 
 export const Default: Story = {
   args: {
-    // label: 'Username',
     defaultValue: 'Polina',
-    // variant: 'outlined',
     required: true,
   },
 };
@@ -49,7 +47,6 @@ export const Filled: Story = {
 
 export const OutlinedTextField: Story = {
   args: {
-    // label: 'Password',
     type: 'password',
     variant: 'outlined',
     helperText: 'Введите пароль',
