@@ -41,17 +41,17 @@
   height: 50px;
   font-size: medium;
 }
-.text-btn {
+.text {
   background: none;
   border: none;
   color:  var(--button-color);
 }
-.outlined-btn {
+.outlined {
   background: none;
   border: 2px solid;
   color: var(--button-color);
 }
-.contained-btn {
+.contained {
   background:  var(--button-color);
   border: 1px solid  var(--button-color);
 }
