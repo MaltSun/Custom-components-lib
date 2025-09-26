@@ -1,13 +1,13 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import './Switch.css';
 
 export interface SwitchProps {
   label?: string;
   size?: 'small' | 'medium' | 'large';
   checked?: boolean;
-  color?: 'deafault' | string;
+  color?: 'default' | string;
   labelPlacement?: 'bottom' | 'end';
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (checked: boolean) => void;
 }
 
 const Switch: FC<SwitchProps> = ({
@@ -21,17 +21,22 @@ const Switch: FC<SwitchProps> = ({
 }) => {
   const [internalChecked, setInternalChecked] = useState(checked ?? false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (checked === undefined) {
-      setInternalChecked(e.target.checked);
+  useEffect(() => {
+    if (checked !== undefined) {
+      setInternalChecked(checked);
     }
-    onChange?.(e);
+  }, [checked]);
+
+  const handleChange = () => {
+    const newChecked = !internalChecked;
+    setInternalChecked(newChecked);
+    onChange?.(newChecked);
   };
 
-  const baseColor = color === 'default' || color === undefined ? '#828181ff' : color;
+  const baseColor = color === 'default' ? '#828181ff' : color;
 
-  const switchClassList = ['switch-container', `switch-${size}`];
-
+  const switchClassList = ['switch-container'];
+  
   if (labelPlacement === 'bottom') {
     switchClassList.push('switch-column');
   } else {
@@ -39,22 +44,21 @@ const Switch: FC<SwitchProps> = ({
   }
 
   return (
-    <div
-      className={switchClassList.join(' ')}
-    >
-      <label className={`switch `}>
-        <input
-          type="checkbox"
-          checked={checked ?? internalChecked}
-          onChange={handleChange}
-          {...props}
-        />
-        <span
-          className={`slider slider-${size} switch-${size}`}
-          style={{ color: baseColor }}
-        ></span>
-      </label>
-      {label && <span>{label}</span>}
+    <div style={{position: 'static'}}>
+      <div className={switchClassList.join(' ')} {...props}>
+        <label className={`switch switch-${size}`}>
+          <input
+            type="checkbox"
+            checked={internalChecked}
+            onChange={handleChange}
+          />
+          <span
+            className={`slider slider-${size} switch-${size}`}
+            style={{ color: baseColor }}
+          ></span>
+        </label>
+        {label && <span>{label}</span>}
+      </div>
     </div>
   );
 };

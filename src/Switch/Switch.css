@@ -9,20 +9,24 @@
 .switch-container {
   font-family: var(--font-family);
   font-weight: var(--font-weight);
+  display: flex;
 }
-
 .switch {
   position: relative;
+  display: inline-block;
+
 }
 
 .switch input {
+  position:absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.slider {
-  position: absolute;
+.slider { 
+  display: block;
+  position: relative;
   cursor: pointer;
   border-radius: 34px;
   top: 0;
@@ -63,7 +67,6 @@ input:checked + .slider-large:before {
   width: 40px;
   height: 20px;
   font-size: var(--base-font-size);
-  gap: 40px;
 }
 
 .switch-small .slider:before {
@@ -76,7 +79,6 @@ input:checked + .slider-large:before {
   width: 50px;
   height: 24px;
   font-size: 20px;
-  gap: 50px;
 }
 
 .switch-medium .slider:before {
@@ -88,16 +90,21 @@ input:checked + .slider-large:before {
   width: 70px;
   height: 34px;
   font-size: 25px;
-  gap: 70px;
 }
 
 .switch-large .slider:before {
   height: 28px;
   width: 28px;
 }
-
 .switch-row {
   display: flex;
   flex-direction: row;
+  align-items: center; 
+  gap: 12px; 
 }
 
+.switch-column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -9,22 +9,32 @@
 .select-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   font-family: var(--font-family);
+  position: relative;
+  padding: 5px;
 }
 .select {
   padding: 8px 12px;
   font-size: var(--base-font-size);
   outline: none;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(72, 72, 72);
   height: 45px;
   width: 200px;
+  position: relative;
+  background: transparent;
 }
-.select:hover {
+.select:hover,
+.select.filled:hover {
   cursor: pointer;
   border-bottom: 2px solid rgba(10, 107, 177, 0.824);
   transition: 0.2s ease;
 }
+.select.outlined:hover {
+  border: 1px solid var(--button-color);
+}
+
 .select.outlined.error {
   border-color: var(--error-color) !important;
 }
@@ -35,6 +45,7 @@
 .select:focus,
 .select.filled:focus {
   border-bottom: 2px solid var(--button-color);
+  transition: 0.2s;
 }
 .select.outlined:focus {
   border: 2px solid var(--button-color);
@@ -59,32 +70,28 @@
   font-weight: 300;
   font-size: 12px;
   position: absolute;
-  top: 5px;
-  left: 11px;
-  /* background-color: white; */
-  padding: 5px;
   transition: transform 4s ease-in-out 1s;
 }
+.select-label.standart {
+  top: -10px;
+}
 .select-label.filled {
-  top: 12px;
-  left: 17px;
+  margin-left: 3px;
   background: transparent;
+  top: -2px;
 }
 .select-label.outlined {
   background: white;
-  top: 2px;
-  left: 22px;
+  /* top: -12px;
+ */
+ top: -7px;
+  margin-left: 7px;
+  z-index: 1;
 }
 
 .select-helper {
   margin-top: 4px;
   color: #6e6e6e;
-}
-
-.select-helper.filled,
-.select-error.filled,
-.select-helper.outlined {
-  margin-left: 5px;
 }
 
 .select-helper,
@@ -97,4 +104,5 @@
 
 option {
   font-size: var(--base-font-size);
+  color: black;
 }

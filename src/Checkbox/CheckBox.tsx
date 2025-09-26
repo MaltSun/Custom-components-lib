@@ -10,7 +10,7 @@ export interface CheckBoxProps {
   required?: boolean;
   disabled?: boolean;
   labelPlacement?: 'bottom' | 'end';
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (checked: boolean) => void; 
 }
 
 const CheckBox: FC<CheckBoxProps> = ({
@@ -28,28 +28,29 @@ const CheckBox: FC<CheckBoxProps> = ({
   const [internalChecked, setInternalChecked] = useState(checked ?? false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const checkBoxStyle = ['checkBox'];
-
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.indeterminate = indeterminate;
     }
   }, [indeterminate]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (checked === undefined) {
-      setInternalChecked(e.target.checked);
+  useEffect(() => {
+    if (checked !== undefined) {
+      setInternalChecked(checked);
     }
-    onChange?.(e);
+  }, [checked]);
+
+  const handleChange = () => {
+    if (disabled) return;
+
+    const newChecked = !internalChecked; 
+    setInternalChecked(newChecked);
+    onChange?.(newChecked);
   };
 
-  if (disabled) {
-    checkBoxStyle.push(`disabled`);
-  }
-
-  if (size) {
-    checkBoxStyle.push(`checkBox-${size}`);
-  }
+  const checkBoxStyle = ['checkBox'];
+  if (disabled) checkBoxStyle.push('disabled');
+  if (size) checkBoxStyle.push(`checkBox-${size}`);
 
   return (
     <div
@@ -60,15 +61,15 @@ const CheckBox: FC<CheckBoxProps> = ({
         alignItems: 'center',
         gap: '8px',
       }}
+      {...props}
     >
       <input
         ref={inputRef}
         type="checkbox"
-        checked={checked ?? internalChecked}
+        checked={internalChecked}
         disabled={disabled}
         onChange={handleChange}
         style={{ accentColor: color }}
-        {...props}
       />
       {label && (
         <label>

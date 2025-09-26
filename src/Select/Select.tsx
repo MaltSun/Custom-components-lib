@@ -25,7 +25,7 @@ const Select: FC<SelectProps> = ({
   options = [],
 }) => {
   const [focused, setFocused] = useState(false);
-  const [value, setValue] = useState(''); 
+  const [value, setValue] = useState('');
 
   const isActive = focused || value !== '';
 
@@ -33,7 +33,9 @@ const Select: FC<SelectProps> = ({
     <div className={`select-container ${variant} `}>
       {label && (
         <label
-          className={`select-label ${variant} ${isActive ? 'active' : ''} ${error ? 'error' : ''}`}
+          className={`select-label ${variant} ${isActive ? 'active' : ''} ${
+            error ? 'error' : ''
+          }`}
         >
           {label} {required && '*'}
         </label>
@@ -47,11 +49,11 @@ const Select: FC<SelectProps> = ({
         onChange={(e) => setValue(e.target.value)}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        
       >
         <option value="" disabled >
           {placeholder}
         </option>
+
         {options.map((opt) => (
           <option key={opt} value={opt}>
             {opt}

@@ -6,11 +6,7 @@ export interface ModalProps {
   openText: string;
 }
 
-const Modal: FC<ModalProps> = ({
-  children,
-  openText = 'open',
-  ...props
-}) => {
+const Modal: FC<ModalProps> = ({ children, openText = 'open', ...props }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
@@ -18,12 +14,11 @@ const Modal: FC<ModalProps> = ({
       <button className="openButton" onClick={() => setOpen(true)}>
         {openText}
       </button>
-
-      <div className={`modal ${isOpen ? 'open' : 'close'}`}>
-        <button className="closeButton" onClick={() => setOpen(false)}>
-          x
-        </button>
-        <div>
+      <div className={`modal-container ${isOpen ? 'open' : 'close'}`}>
+        <div className={`modal ${isOpen ? 'open' : 'close'}`}>
+          <button className="closeButton" onClick={() => setOpen(false)}>
+            x
+          </button>
           {children}
         </div>
       </div>

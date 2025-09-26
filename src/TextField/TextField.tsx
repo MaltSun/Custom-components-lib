@@ -10,7 +10,6 @@ export interface TextFieldProps {
   type?: 'text' | 'password';
   required?: boolean;
   readonly?: boolean;
-  options?: string[];
   disable?: boolean;
   onChange?: (value: string) => void;
 }
@@ -62,7 +61,7 @@ const TextField: FC<TextFieldProps> = ({
     <div className={`textfield ${error ? 'error' : ''} ${variant}`}>
       {label && (
         <label
-          className={`textfield-label ${variant} ${isActive ? 'active': ''}`}
+          className={`textfield-label ${variant} ${isActive ? 'active': ''} ${error ? 'error' : ''}`}
         >
           {label} {required && '*'}
         </label>
