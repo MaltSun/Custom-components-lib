@@ -64,12 +64,12 @@ test('renders checkbox with label ', () => {
 test('renders checkbox with end label placement', () => {
   render(<Checkbox label="hello" labelPlacement="end" />);
   const container = screen.getByRole('checkbox').parentElement;
-  expect(container).toHaveStyle({ flexDirection: 'row' }); // end → row
+  expect(container).toHaveStyle({ flexDirection: 'row' }); 
 });
 
 test('renders checkbox with bottom label placement', () => {
   render(<Checkbox label="hello" labelPlacement="bottom" />);
   const container = screen.getByRole('checkbox').parentElement;
-  expect(container).toHaveStyle({ flexDirection: 'column' }); // bottom → column
+  expect(container).toHaveStyle({ flexDirection: 'column' }); 
 });
 

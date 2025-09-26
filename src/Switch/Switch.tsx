@@ -36,7 +36,7 @@ const Switch: FC<SwitchProps> = ({
   const baseColor = color === 'default' ? '#828181ff' : color;
 
   const switchClassList = ['switch-container'];
-  
+
   if (labelPlacement === 'bottom') {
     switchClassList.push('switch-column');
   } else {
@@ -44,7 +44,7 @@ const Switch: FC<SwitchProps> = ({
   }
 
   return (
-    <div style={{position: 'static'}}>
+    <div style={{ position: 'static' }}>
       <div className={switchClassList.join(' ')} {...props}>
         <label className={`switch switch-${size}`}>
           <input
