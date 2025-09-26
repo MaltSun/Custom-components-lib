@@ -67,6 +67,7 @@ const CheckBox: FC<CheckBoxProps> = ({
         ref={inputRef}
         type="checkbox"
         checked={internalChecked}
+        required={required}
         disabled={disabled}
         onChange={handleChange}
         style={{ accentColor: color }}
