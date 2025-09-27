@@ -19,7 +19,6 @@ const Select: FC<SelectProps> = ({
   error,
   variant = 'standart',
   required = false,
-  readonly = false,
   disable = false,
   helperText = '',
   options = [],
