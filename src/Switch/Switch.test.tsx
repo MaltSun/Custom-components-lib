@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Switch, { SwitchProps } from './Switch';
 
 test('renders default switch', () => {
@@ -54,3 +55,36 @@ test('renders blue switch', () => {
   const slider = screen.getByRole('checkbox').nextSibling as HTMLElement;
   expect(slider).toHaveStyle({ color: 'rgb(0, 0, 255)' });
 });
+
+test('toggles internal state when clicked', async () => {
+    const user = userEvent.setup();
+    render(<Switch />);
+    
+    const checkbox = screen.getByRole('checkbox');
+    
+    expect(checkbox).not.toBeChecked();
+    
+    await user.click(checkbox);
+    expect(checkbox).toBeChecked();
+    
+    await user.click(checkbox);
+    expect(checkbox).not.toBeChecked();
+  });
+
+
+test('calls onChange callback with correct value', async () => {
+    const user = userEvent.setup();
+    const mockOnChange = jest.fn();
+    
+    render(<Switch onChange={mockOnChange} />);
+    
+    const checkbox = screen.getByRole('checkbox');
+    
+    await user.click(checkbox);
+    expect(mockOnChange).toHaveBeenCalledWith(true);
+    expect(mockOnChange).toHaveBeenCalledTimes(1);
+    
+    await user.click(checkbox);
+    expect(mockOnChange).toHaveBeenCalledWith(false);
+    expect(mockOnChange).toHaveBeenCalledTimes(2);
+  });

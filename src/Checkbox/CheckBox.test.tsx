@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Checkbox, { CheckBoxProps } from './CheckBox';
 
 test('renders default checkbox', () => {
@@ -64,12 +65,26 @@ test('renders checkbox with label ', () => {
 test('renders checkbox with end label placement', () => {
   render(<Checkbox label="hello" labelPlacement="end" />);
   const container = screen.getByRole('checkbox').parentElement;
-  expect(container).toHaveStyle({ flexDirection: 'row' }); 
+  expect(container).toHaveStyle({ flexDirection: 'row' });
 });
 
 test('renders checkbox with bottom label placement', () => {
   render(<Checkbox label="hello" labelPlacement="bottom" />);
   const container = screen.getByRole('checkbox').parentElement;
-  expect(container).toHaveStyle({ flexDirection: 'column' }); 
+  expect(container).toHaveStyle({ flexDirection: 'column' });
 });
 
+test('toggles internal state when clicked', async () => {
+  const user = userEvent.setup();
+  render(<Checkbox label="hello" />);
+
+  const checkbox = screen.getByRole('checkbox');
+
+  expect(checkbox).not.toBeChecked();
+
+  await user.click(checkbox);
+  expect(checkbox).toBeChecked();
+
+  await user.click(checkbox);
+  expect(checkbox).not.toBeChecked();
+});
