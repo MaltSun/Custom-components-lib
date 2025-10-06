@@ -1,0 +1,16 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# optional eslint cache
+.eslintcache
+
+*storybook.log
+storybook-static
+
+dist

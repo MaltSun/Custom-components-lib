@@ -1,0 +1,110 @@
+:root {
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-weight: 700;
+  --base-font-size: 16px;
+  --button-color: rgb(9, 135, 225);
+  --small-font-size: 12px;
+  --error-color: red;
+}
+.switch-container {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  display: flex;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+
+}
+
+.switch input {
+  position:absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider { 
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: currentColor;
+}
+
+input:checked + .slider-small:before {
+  transform: translateX(18px);
+}
+
+input:checked + .slider-medium:before {
+  transform: translateX(25px);
+}
+
+input:checked + .slider-large:before {
+  transform: translateX(35px);
+}
+
+.switch-small {
+  width: 40px;
+  height: 20px;
+  font-size: var(--base-font-size);
+}
+
+.switch-small .slider:before {
+  height: 16px;
+  width: 16px;
+  top: 2px;
+}
+
+.switch-medium {
+  width: 50px;
+  height: 24px;
+  font-size: 20px;
+}
+
+.switch-medium .slider:before {
+  height: 18px;
+  width: 18px;
+}
+
+.switch-large {
+  width: 70px;
+  height: 34px;
+  font-size: 25px;
+}
+
+.switch-large .slider:before {
+  height: 28px;
+  width: 28px;
+}
+.switch-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 12px; 
+}
+
+.switch-column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
