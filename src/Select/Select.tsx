@@ -28,6 +28,13 @@ const Select: FC<SelectProps> = ({
 
   const isActive = focused || value !== '';
 
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setValue(e.target.value);
+  };
+
+  const handleFocus = () => setFocused(true)
+  const handleBlur = () => setFocused(false)
+
   return (
     <div className={`select-container ${variant} `}>
       {label && (
@@ -40,14 +47,14 @@ const Select: FC<SelectProps> = ({
         </label>
       )}
 
-      <select
+      <select id='my-select'
         className={`select ${variant} ${error ? 'error' : ''}`}
         required={required}
         disabled={disable}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
+        onChange={handleChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
       >
         <option value="" disabled >
           {placeholder}
